@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDEDED"
+    tools:context=".MainActivity">
+
+    <!-- Barra superior com o título "IMC" -->
+
+    <!-- CardView para o conteúdo principal -->
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="438dp"
+        android:layout_height="198dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#4CAF50"
+        android:fontFamily="sans-serif-medium"
+        android:padding="60dp"
+        android:text="IMC"
+        android:textColor="#FFFFFF"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="Calculadora de IMC"
+                android:textAlignment="center"
+                android:textColor="#333333"
+                android:textSize="24sp" />
+
+            <!-- Campo de peso -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxStrokeColor="#4CAF50"
+                app:helperText="Peso em kg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Digite seu peso"
+                    android:inputType="numberDecimal"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Campo de altura -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:boxStrokeColor="#4CAF50"
+                app:helperText="Altura em metros">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAltura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Digite sua altura"
+                    android:inputType="numberDecimal"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Botão para calcular -->
+            <Button
+                android:id="@+id/btnCalcular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#4CAF50"
+                android:text="Calcular IMC"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <!-- Resultado do IMC -->
+            <TextView
+                android:id="@+id/tvResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Resultado: "
+                android:textColor="#333333"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
